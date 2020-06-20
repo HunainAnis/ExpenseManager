@@ -25,10 +25,10 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - name: Installing dependencies
-      uses: npm install
+      run: npm install
     - name: building project
-      uses: npm run build
+      run: npm run build
     - name: Install Surge
-      uses: npm install --global surge
+      run: npm install --global surge
     - name: deploying to surge
-      uses: surge ./build expense-manager-01.surge.sh --token ${{Secrets.SURGE_TOKEN}}
+      run: surge ./build expense-manager-01.surge.sh --token ${{ secrets.SURGE_TOKEN }}
