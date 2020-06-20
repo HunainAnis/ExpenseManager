@@ -1,12 +1,14 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Main from './components/mainComponent';
+import { GlobalProvider } from './MainState';
 
 function App() {
   return (
     <div>
-      <Main />
+      <GlobalProvider>
+        <Main />
+      </GlobalProvider>
     </div>
   );
 }
