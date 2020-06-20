@@ -31,4 +31,4 @@ jobs:
     - name: Install Surge
       uses: npm install --global surge
     - name: deploying to surge
-      uses: surge ./build expense-manager-01.surge.sh --token ${{secrets.SURGE_TOKEN}}
+      uses: surge ./build expense-manager-01.surge.sh --token ${{Secrets.SURGE_TOKEN}}
