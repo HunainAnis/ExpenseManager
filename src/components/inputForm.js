@@ -7,7 +7,7 @@ export const InputForm = () => {
     const [amount, setAmount] = useState(0)
     const { addNewTransaction } = useContext(GlobalContext)
     const controlNewTransaction = () => {
-        let data = {id: name, name, amount, type:amount<0?'expense':'credit', timestamp:new Date()}
+        let data = {id: new Date(), name, amount, type:amount<0?'expense':'credit', timestamp:new Date()}
         if(name === '') {
             alert('Please give your transaction a good name!')
         }
