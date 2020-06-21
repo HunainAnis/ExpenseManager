@@ -4,20 +4,19 @@ import { GlobalContext } from '../MainState'
 
 
 export const AllTransactions = () => {
-    const context = useContext(GlobalContext)
-    console.log(context)
+    const { delTrans, transactions } = useContext(GlobalContext)
+    console.log(transactions)
     return(
         <Row>
             <Col>
-                <h1>History of Transaction</h1>
+                <h3>History of Transaction</h3>
                 {
-                    context.transactions.length !== 0 &&
-                    context.transactions.map(trans => (
+                    transactions !== undefined && transactions.map(trans => (
                         <Card key={trans.id}>
                             <Row>
                                 <Col xs={{ size:6, offset:1 }}><h6 style={{marginTop:'auto', marginBottom:'auto'}}>{trans.name}</h6></Col>
                                 <Col xs='3'><h6 style={{marginTop:'auto', marginBottom:'auto'}}>{trans.type === 'expense'?'-':'+'}${Math.abs(trans.amount)}</h6></Col>
-                                <Col><Button color='white' style={{color:'red'}}>X</Button></Col>
+                                <Col><Button onClick={() => delTrans(trans.id)} color='white' style={{color:'red'}}>X</Button></Col>
                             </Row>
                         </Card>
                     ))
