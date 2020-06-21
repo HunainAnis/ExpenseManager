@@ -4,18 +4,18 @@ import { GlobalContext } from '../MainState'
 
 export const InputForm = () => {
     const [name, setName] = useState('')
-    const [amount, setAmount] = useState(0)
+    const [amount, setAmount] = useState('')
     const { addNewTransaction } = useContext(GlobalContext)
     const controlNewTransaction = () => {
-        let data = {id: new Date(), name, amount, type:amount<0?'expense':'credit', timestamp:new Date()}
+        let data = {id: new Date().toLocaleString(), name, amount, type:amount<0?'expense':'credit', timestamp:new Date().toLocaleString()}
         if(name === '') {
             alert('Please give your transaction a good name!')
         }
-        else if(amount === 0) {
-            alert('Amount must not be zero!')
+        else if(amount === '') {
+            alert('Amount must not be empty!')
         }else{
             addNewTransaction(data)
-            setAmount(0)
+            setAmount('')
             setName('')
             alert('New Transaction Added!')
         }
@@ -28,10 +28,10 @@ export const InputForm = () => {
                 <Input onChange={(e)=>setName(e.target.value)} value = {name} type='text' />
                 <Label>Amount</Label>
                 <Input onChange={(e)=>setAmount(e.target.value)} value = {amount} type='number' />
+                        Insert (-) before the amount in order to add the expense
                 <Row>
                     <Col>
-                            <Button onClick={()=>controlNewTransaction()} color='info'>Add Transaction</Button>
-                            Insert (-) before the amount in order to add the expense
+                        <Button block onClick={()=>controlNewTransaction()} color='info'>Add Transaction</Button>
                     </Col>
                 </Row>
             </Form>
