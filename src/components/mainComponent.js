@@ -12,7 +12,7 @@ const Main = () => {
                 <Row sm='8'>
                     <Col>
                         <Card>
-                            <CardHeader>Expense Manager App</CardHeader>
+                            <CardHeader><h2 style={{color:'maroon', textAlign:'center'}}>Expense Manager App</h2></CardHeader>
                             <CardBody>
                                 <MainTiles />
                                 <InputForm />

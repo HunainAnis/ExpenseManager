@@ -17,9 +17,9 @@ export const AllTransactions = () => {
                 {
                     transactions !== undefined && transactions.map(trans => (
                         <Card key={trans.id}>
-                            <Row>
-                                <Col xs={{ size:6, offset:1 }}><h6 style={{marginTop:'auto', marginBottom:'auto'}}>{trans.name}</h6></Col>
-                                <Col xs='3'><h6 style={{marginTop:'auto', marginBottom:'auto'}}>{trans.type === 'expense'?'-':'+'}${Math.abs(trans.amount)}</h6></Col>
+                            <Row style={{borderLeftWidth:8, borderLeftColor:trans.type==='expense'?'red':'green', borderLeftStyle:'solid'}}>
+                                <Col xs={{ size:5, offset:1 }}><h6 style={{marginTop:'auto', marginBottom:'auto'}}>{trans.name}</h6></Col>
+                                <Col xs='4'><p style={{marginTop:'auto', marginBottom:'auto'}}>{trans.type === 'expense'?'-':'+'}${Math.abs(trans.amount)}</p></Col>
                                 <Col><Button onClick={() => controlDel(trans.id)} color='white' style={{color:'red'}}>X</Button></Col>
                             </Row>
                         </Card>
