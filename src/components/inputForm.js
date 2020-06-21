@@ -31,6 +31,7 @@ export const InputForm = () => {
                 <Row>
                     <Col>
                             <Button onClick={()=>controlNewTransaction()} color='info'>Add Transaction</Button>
+                            Insert (-) before the amount in order to add the expense
                     </Col>
                 </Row>
             </Form>
