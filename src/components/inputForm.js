@@ -1,7 +1,6 @@
 import React, { useState, useContext } from 'react'
-import { Row, Col, Form, Label, Input, Button, ButtonGroup } from 'reactstrap'
+import { Row, Col, Form, Label, Input, Button } from 'reactstrap'
 import { GlobalContext } from '../MainState'
-import { addTransaction } from '../appActions'
 
 export const InputForm = () => {
     const [name, setName] = useState('')

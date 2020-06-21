@@ -11,7 +11,7 @@ export const MainTiles = () => {
         sumOfTransactions = sumOfTransactions + parseInt(i.amount)
         expense = i.amount < 0 ? expense + parseInt(i.amount) : expense
         console.log('expense updated')
-        credit = i.amount > 0 ? credit + parseInt(i.amount) : credit
+        return credit = i.amount > 0 ? credit + parseInt(i.amount) : credit
     })
     console.log(credit)
     return(
